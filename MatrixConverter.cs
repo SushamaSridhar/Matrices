@@ -3,14 +3,7 @@ using System.Text;
 namespace Matrices
 {
     public class MatrixConverter
-    {
-        //private int[,] _data;
-
-        //public Matrix(int[,] data)
-        //    {
-        //    _data = data;
-        //}
-
+    {      
         public static int[] GetRow(int[,] matrix, int rowIndex)
         {
             int cols = matrix.GetLength(1);
@@ -85,17 +78,9 @@ namespace Matrices
             using (MD5 md5 = MD5.Create())
             {
                 byte[]  inputBytes = Encoding.ASCII.GetBytes(matrix);
-                byte[] hashbytes = md5.ComputeHash(inputBytes);
+                byte[] hashbytes = md5.ComputeHash(inputBytes);              
 
-                //Convert the byte array to hxadecimal string
-                StringBuilder sb = new StringBuilder();
-                //for (int i = 0; i< hashbytes.Length; i++)
-                //{
-                //    sb.Append(hashbytes[i].ToString("x2"));
-                //}
-                //return sb.ToString();
-
-                return BitConverter.ToString(hashbytes).Replace("_", "").ToLower();
+                return BitConverter.ToString(hashbytes).ToLower();
 
             }
         }
